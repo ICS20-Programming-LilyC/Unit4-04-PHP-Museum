@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  background-color: rgb(101, 36, 36);
+  background-color: rgb(101 36 36);
   color: hsl(32deg 65% 62%);
   padding: 40px;
   text-align: center;
