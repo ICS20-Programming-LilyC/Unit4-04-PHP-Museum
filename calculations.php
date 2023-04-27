@@ -13,34 +13,34 @@ $cost = "";
 $userAge = intval($_POST["user-age"]);
 $day = $_POST["day"];
 
-//If age is less than 0, display that they must enter a valid age
+//If the user enters a negative number for their age, display "Please enter a valid age."
 if ($userAge < 0) {
     $cost = "Please enter a valid age.";
 } 
 
-//If the user does not enter their age, say that they must enter their age
+//Otherwise, if user does not enter age, display "Please enter age"
 elseif (empty($userAge)) {
     $cost = "Please enter age.";
 } 
 
-//Otherwise, if the user does not enter the day of the week, display that they must enter day of the week
+//Otherwise, if the user does not enter a day of the week, display "Please enter a day of the week."
 elseif ($day == "Day of week") {
-    $cost = "Please enter a day of the week.";
+    $cost = "Please select a day of the week.";
 } 
 
-//Otherwise, if the user is under 5 OR over 95 years old, display that they get in to the museum for free
+//Using compound if statements to determine cost of free admission. 
 elseif (($userAge < CHILD_FREE) || ($userAge > ELDERLY_FREE)) {
     $cost = "You can visit the museum for free!";
 } 
 
-//Otherwise, if the user is between 12 and 21 years old, OR if it is Tuesday or Thursday, display that they get a discount
+//Otherwise if the user's age is between 12 and 21 and between the days Thursday and Tuesday, display "You get a student discount".
 elseif ((($userAge >= STUDENT_MINIMUM) && ($userAge <= STUDENT_MAXIMUM)) || (($day == "Thursday") || ($day == "Tuesday"))) {
-    $cost = "You get a student discount.";
+    $cost = "You’re eligible for a student discount!";
 }
 
-//Else, display that they do not get a discount at all
-else {
-    $cost = "You are not eligible for a discount and must pay the full price.";
+//Else, display "You are not eligible for a discount and must pay the full price."
+else { 
+    $cost = "You're not eligible for a discount, you will have to pay the full price. Thank you for understanding.";
 }
 
 // Display the museum pass the user gets

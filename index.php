@@ -70,6 +70,5 @@
     <iframe name="results" id="results"></iframe>
       <br>
       <br>
-  </main>
   </body>
 </html>
