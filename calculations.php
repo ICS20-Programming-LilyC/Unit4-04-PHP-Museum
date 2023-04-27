@@ -28,7 +28,7 @@ elseif ($day == "Day of week") {
     $cost = "Please select a day of the week.";
 } 
 
-//Using compound if statements to determine cost of free admission. 
+//Using compound if statements to determine the cost of free admission. 
 elseif (($userAge < CHILD_FREE) || ($userAge > ELDERLY_FREE)) {
     $cost = "You can visit the museum for free!";
 } 
